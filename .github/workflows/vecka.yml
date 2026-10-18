@@ -1,0 +1,73 @@
+name: Veckokoll (länkar, fart och SEO)
+on:
+  schedule:
+    - cron: "0 5 * * 1"   # måndagar 07:00 svensk sommartid
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: write
+jobs:
+  lankar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - id: urval
+        run: echo "urls=$(python3 skript/lankurval.py 30 | tr '\n' ' ')" >> "$GITHUB_OUTPUT"
+      - id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress --max-concurrency 16 --timeout 20 --max-retries 2
+            --scheme https --scheme http
+            --accept '100..=103,200..=299,403,429'
+            --exclude 'linkedin\.com|facebook\.com|instagram\.com|twitter\.com|x\.com|tiktok\.com|youtube\.com'
+            ${{ steps.urval.outputs.urls }}
+          output: lychee.md
+          format: markdown
+          fail: false
+          jobSummary: true
+      - name: Ärende om trasiga länkar
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for n in $(gh issue list --label lankar --state open --json number -q '.[].number'); do
+            gh issue close "$n" --comment "Ersatt av veckans koll."
+          done
+          if [ "${{ steps.lychee.outputs.exit_code }}" != "0" ]; then
+            { echo "Veckans länkkoll hittade länkar som inte fungerar. Kollat: startsidan plus 30 sidor per sajt."; echo; head -c 60000 lychee.md; } > kropp.md
+            gh issue create --label lankar --title "Trasiga länkar vecka $(date +%V)" --body-file kropp.md
+          fi
+
+  fart:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Mät med Lighthouse
+        run: |
+          mkdir -p lh
+          for url in $(grep -v '^#' sajter.txt); do
+            namn=$(echo "$url" | sed -E 's#https?://##; s#/$##')
+            npx -y lighthouse@12 "$url" --quiet --chrome-flags="--headless=new --no-sandbox" \
+              --only-categories=performance,seo,accessibility,best-practices \
+              --output=json --output-path="lh/$namn.json" || echo "kunde inte mäta $namn"
+          done
+          python3 skript/fart.py lh
+      - name: Spara och rapportera
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "sajtvakt"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add resultat/fart.json && git commit -qm "Veckans mätning" && git push || true
+          nr=$(gh issue list --label fart --state open --json number -q '.[0].number')
+          { echo "Senast mätt $(date +%F)."; echo; cat rapport.md; } > kropp.md
+          if [ -z "$nr" ]; then gh issue create --label fart --title "Veckorapport: fart och SEO" --body-file kropp.md
+          else gh issue edit "$nr" --body-file kropp.md; fi
+          if [ -s varningar.md ]; then
+            { echo "Något har blivit klart sämre sedan förra veckan:"; echo; cat varningar.md; echo; cat rapport.md; } > varning.md
+            gh issue create --label fart-varning --title "Varning: fart/SEO vecka $(date +%V)" --body-file varning.md
+          fi
