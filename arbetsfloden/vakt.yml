@@ -1,0 +1,19 @@
+name: Sajtvakt (är sajterna uppe?)
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: vakt
+jobs:
+  vakt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 skript/vakt.py
+        env:
+          GH_TOKEN: ${{ github.token }}
