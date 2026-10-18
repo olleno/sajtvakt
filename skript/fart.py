@@ -18,6 +18,7 @@ for fil in sorted(Path(sys.argv[1]).glob("*.json")):
         nu[fil.stem] = None
 
 forra_fil = Path("resultat/fart.json")
+forra_fil.parent.mkdir(exist_ok=True)
 forra = json.loads(forra_fil.read_text()) if forra_fil.exists() else {}
 
 rader = ["| Sajt | " + " | ".join(n for _, n in KAT) + " |", "|---" * (len(KAT) + 1) + "|"]
