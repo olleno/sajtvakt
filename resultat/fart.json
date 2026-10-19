@@ -1,6 +1,6 @@
 {
  "dejtradar.se": {
-  "performance": 99,
+  "performance": 100,
   "seo": 92,
   "accessibility": 100,
   "best-practices": 100
@@ -18,25 +18,25 @@
   "best-practices": 100
  },
  "husradarn.se": {
-  "performance": 96,
+  "performance": 100,
   "seo": 100,
   "accessibility": 100,
   "best-practices": 100
  },
  "investeringsverket.se": {
-  "performance": 97,
+  "performance": 99,
   "seo": 92,
   "accessibility": 100,
   "best-practices": 100
  },
  "kommunradar.se": {
-  "performance": 100,
+  "performance": 91,
   "seo": 100,
-  "accessibility": 95,
+  "accessibility": 96,
   "best-practices": 96
  },
  "konkursradarn.se": {
-  "performance": 98,
+  "performance": 99,
   "seo": 100,
   "accessibility": 96,
   "best-practices": 100
@@ -48,7 +48,7 @@
   "best-practices": 100
  },
  "nordwikpartners.se": {
-  "performance": 94,
+  "performance": 95,
   "seo": 100,
   "accessibility": 100,
   "best-practices": 100
@@ -60,13 +60,13 @@
   "best-practices": 100
  },
  "saasverket.se": {
-  "performance": 91,
+  "performance": 89,
   "seo": 92,
   "accessibility": 95,
   "best-practices": 100
  },
  "wineradar.net": {
-  "performance": 84,
+  "performance": 65,
   "seo": 100,
   "accessibility": 100,
   "best-practices": 79
