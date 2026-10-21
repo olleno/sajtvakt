@@ -1,4 +1,5 @@
 # Lagat av driftvakten
+2026-10-21 | saasverket, finansieringsverket, investeringsverket, dejtradar, krimradar, konkursradarn, granntvisten, husradarn | alla svarar 402 DEPLOYMENT_DISABLED (Vercel-kontot saasverket, inte koden; senaste deploy READY) | ej lagat i kod, notis till Olle | –
 2026-10-20 | racepoint | död bild kommunradar.se/logo.svg (404) | sponsorraden visar namnet i text; bygge/test kunde inte köras här (bygget kräver data) | vantar-pa-olle
 2026-10-20 | nordwikpartners-web | död länk investindalarna.se …facebook-datahall-sweco.pdf (404) | länken borttagen, texten kvar (2 ställen); sidtester OK | vantar-pa-olle
 2026-10-20 | investverket | död källänk etoro.com/sv/investing/stocks (404) | borttagen ur data/produkter/etoro.json, ombyggd, alla tester OK | vantar-pa-olle
