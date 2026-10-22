@@ -11,3 +11,4 @@ https://racepoint.net/
 https://wineradar.net/
 https://kommunradar.se/
 https://nordwikpartners.se/
+https://raw.githubusercontent.com/olleno/sajtvakt/main/test-uppe.txt
