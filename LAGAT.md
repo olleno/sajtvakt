@@ -1,4 +1,7 @@
 # Lagat av driftvakten
+2026-10-22 | alla 8 Vercel-sajter | 402 sedan 20 okt 22:38 (obetald Vercel-faktura, teamet saasverket) – Olle betalade 22 okt, alla svarar 200, Vercel softBlock borta, status active | larmkedjan byggd: vakt.py mejlar Olle (@olleno + tilldelning) efter 15 min nere, var 6:e timme, ✅ när uppe; testat skarpt med testrad (ärende #14), mejlen kom fram; morgonrutinen kollar betalningar (Vercel/Sentry/Stripe) och mejlar Olle varje morgon tills löst | main
+2026-10-22 | agentvakt | körningen fallerade vid "Spara översikten" (push krockade med andra chattar) → ~200 Run failed-mejl | pull --rebase + 5 försök, fallerar aldrig på det steget | main
+2026-10-22 | sajtvakt | KVAR: GitHubs schema kör vakten bara var 3–5:e timme (inte var 5:e min); Gmail-filtret "Nyhetsbrev" gömmer GitHubs ärendemejl | väntar på Olles beslut (klocka i Cloudflare + nyckel; ändra filtret) | –
 2026-10-21 | saasverket, finansieringsverket, investeringsverket, dejtradar, krimradar, konkursradarn, granntvisten, husradarn | alla svarar 402 DEPLOYMENT_DISABLED (Vercel-kontot saasverket, inte koden; senaste deploy READY) | ej lagat i kod, notis till Olle | –
 2026-10-20 | racepoint | död bild kommunradar.se/logo.svg (404) | sponsorraden visar namnet i text; bygge/test kunde inte köras här (bygget kräver data) | vantar-pa-olle
 2026-10-20 | nordwikpartners-web | död länk investindalarna.se …facebook-datahall-sweco.pdf (404) | länken borttagen, texten kvar (2 ställen); sidtester OK | vantar-pa-olle
