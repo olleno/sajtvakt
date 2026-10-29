@@ -1,4 +1,7 @@
 # Lagat av driftvakten
+2026-10-29 | alla sajter | morgonkoll: alla 12 svarar 200, Vercel-teamet utan spärr, inga nya larm sedan 27 okt (ärende #17/#18 redan hanterade), Stripe-kopplingen kräver ny inloggning (ej läst) | inget att laga | –
+2026-10-29 | sentry SAJTERNA-7 | RangeError (rekursion) i kommunradar.se, 3 händelser på 12 s, en iPhone-session (Chrome iOS), 0 användare; felraden finns inte längre på dagens sida | ej åtgärdat, lämnas öppen, bevakas | –
+2026-10-29 | olles kö | lansera-kort för krimradar, konkursradarn, granntvisten (Adtraction-ansökningar väntar på Olle) | kort lagda | –
 2026-10-27 | alla sajter | morgonkoll: alla 12 sajter svarar 200, Vercel-teamet utan spärr, Sentry tappar inget på kvot (Stripe-kopplingen kräver ny inloggning, kunde inte läsas) | inget att laga | –
 2026-10-27 | konkursradarn, nordwikpartners | fart-varning v44 (83, 66): sidorna är lätta (90 resp. 18 kB), troligen mätbrus/extern bild; inget ändrat | väntar | –
 2026-10-27 | sentry SAJTERNA-6 | fel från localhost:8471 (testkörning, inte skarp sajt) | ignoreras | –
