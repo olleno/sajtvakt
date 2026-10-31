@@ -1,4 +1,5 @@
 # Lagat av driftvakten
+2026-10-31 | alla sajter | morgonkoll: alla 12 svarar 200, Vercel-teamet saasverket finns (ingen spärr), inga olösta Sentry-fel senaste dygnet, inga nya larm sedan #17/#18, inga idéer att väcka (närmast Fiducia 1 dec), lansera-korten för krimradar/konkursradarn/granntvisten ligger kvar; Stripe-kopplingen kräver ny inloggning (ej läst) | inget att laga | –
 2026-10-30 | alla sajter | morgonkoll: alla 12 svarar 200, Vercel-teamet saasverket finns (ingen spärr synlig), inga nya Sentry-fel senaste dygnet, inga nya larm sedan #17/#18, inga parkerade idéer som ska väckas, lansera-korten (krimradar, konkursradarn, granntvisten) ligger kvar; Stripe-kopplingen kräver ny inloggning (ej läst) | inget att laga | –
 2026-10-29 | alla sajter | morgonkoll: alla 12 svarar 200, Vercel-teamet utan spärr, inga nya larm sedan 27 okt (ärende #17/#18 redan hanterade), Stripe-kopplingen kräver ny inloggning (ej läst) | inget att laga | –
 2026-10-29 | sentry SAJTERNA-7 | RangeError (rekursion) i kommunradar.se, 3 händelser på 12 s, en iPhone-session (Chrome iOS), 0 användare; felraden finns inte längre på dagens sida | ej åtgärdat, lämnas öppen, bevakas | –
